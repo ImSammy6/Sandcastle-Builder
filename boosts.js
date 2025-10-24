@@ -5320,8 +5320,10 @@ Molpy.DefineBoosts = function() {
 			var cost = l * (l + 1) / 2;
 			Molpy.boostSilence++;
 			if (Molpy.Spend('QQ', cost)) {
-				for (var i = 0; i < runs; i++) {
-					Molpy.RewardLogicat(Molpy.Level('QQ'), Math.floor(l/runs));
+				if (l >= 25) {
+					for (var i = 0; i < runs; i++) {
+						Molpy.RewardLogicat(Molpy.Level('QQ'), Math.floor(l/runs));
+					}
 				}
 				Molpy.RewardLogicat(Molpy.Level('QQ'), l%runs);
 			}
