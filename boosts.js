@@ -5325,7 +5325,9 @@ Molpy.DefineBoosts = function() {
 						Molpy.RewardLogicat(Molpy.Level('QQ'), Math.floor(l/runs));
 					}
 				}
-				Molpy.RewardLogicat(Molpy.Level('QQ'), l%runs);
+				if (l%runs != 0) {
+					Molpy.RewardLogicat(Molpy.Level('QQ'), l%runs);
+				}
 			}
 			Molpy.boostSilence--;
 		}
