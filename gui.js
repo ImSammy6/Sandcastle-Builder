@@ -1215,8 +1215,9 @@ Molpy.DefineGUI = function() {
 				log.text.push(text);
 				log.qty.push(1);
 				if(log.text.length > Molpy.logLengths[Molpy.options['loglength']]){
-					log.text.splice(0, log.text.length - Molpy.logLengths[Molpy.options['loglength']]);
-					log.qty.splice(0, log.text.length - Molpy.logLengths[Molpy.options['loglength']]);
+					var numToRemove = log.text.length - Molpy.logLengths[Molpy.options['loglength']];
+					log.text.splice(0, numToRemove);
+					log.qty.splice(0, numToRemove);
 				}
 			}
 			Molpy.logUpdatePaint = 1;
